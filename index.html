@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript">
+
+        function zaokragl()
+        {
+            var pole = parseFloat(document.getElementById("pole").value)
+
+            var w1 = document.getElementById("wynik1")
+            var w2 = document.getElementById("wynik2")
+            var w3 = document.getElementById("wynik3")
+            var w4 = document.getElementById("wynik4")
+
+            if (Number.isInteger(pole)) alert("Liczba jest już całkowita");
+            else {
+                var z1 = Math.ceil(pole);
+                var z2 = Math.floor(pole);
+                var z3 = Math.round(pole);
+                var z4 = Math.trunc(pole);
+
+                w1.innerHTML = z1;
+                w2.innerHTML = z2;
+                w3.innerHTML = z3;
+                w4.innerHTML = z4;
+            }
+
+        }
+
+    </script>
+
+</head>
+<body>
+    <h2>Zaokrąglanie liczb</h2>
+    <div id="inputy">
+        <input type="number" set placeholder="Liczba" id="pole" set="any">
+        <input type="submit" value="Zaokrągl" id="sprawdz" onclick="zaokragl()">
+    </div>
+    <div id="nazwy">
+        <div id="nazwa1">W góre</div>
+        <div id="nazwa2">W dół</div>
+        <div id="nazwa3">Do l.całk.</div>
+        <div id="nazwa4">Usunięcie</div>
+    </div>
+    <div id="wyniki">
+        <div id="wynik1">1</div>
+        <div id="wynik2">1</div>
+        <div id="wynik3">1</div>
+        <div id="wynik4">1</div>
+    </div>
+
+</body>
+</html>
